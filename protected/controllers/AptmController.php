@@ -41,8 +41,14 @@ class AptmController extends Controller
 				'allow',
 				'actions'=>array('show','cal','detail','dayCal','add','selectCust',
                             'selectOrderItem','detailOther','selectAptmByDay','showAptmByDay'),
-				'users'=>array('superadmin','admin'),
+				'users'=>array('superadmin'),
 			),
+            array(
+                'allow',
+                'actions'=>array('show','cal','detail','dayCal','add','selectCust',
+                    'selectOrderItem','detailOther','selectAptmByDay','showAptmByDay'),
+                'users'=>array('admin','zhangli','shenjia','zengkan','wangjiayi','weixuejiao'),
+            ),
 			array(
 				'deny',
 				'users'=>array('*'),

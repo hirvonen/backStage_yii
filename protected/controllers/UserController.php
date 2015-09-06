@@ -32,7 +32,7 @@ class UserController extends Controller
 			array(
 				'allow',
 				'actions'=>array('detail','logout','show','chgpwd','update'),
-				'users'=>array('admin'),
+				'users'=>array('admin','zhangli','shenjia','zengkan','wangjiayi','weixuejiao'),
 			),
 			array(
 				'allow',
@@ -301,7 +301,8 @@ class UserController extends Controller
 				}
 
 				if($admin_info->save()&&$user_info->save()){
-					$this->redirect("./index.php?r=user/detail&id=$id");
+//					$this->redirect("./index.php?r=user/detail&id=$id");
+					$this->redirect("./index.php?r=user/show");
 				}
 				else {
 					//var_dump($user_info->getErrors());
@@ -338,7 +339,8 @@ class UserController extends Controller
 				}
 
 				if($beautician_info->save()&&$user_info->save()){
-					$this->redirect("./index.php?r=user/detail&id=$id");
+//					$this->redirect("./index.php?r=user/detail&id=$id");
+					$this->redirect("./index.php?r=user/show");
 				}
 				else {
 					//var_dump($user_info->getErrors());
@@ -375,7 +377,8 @@ class UserController extends Controller
 				}
 
 				if($customer_info->save()&&$user_info->save()){
-					$this->redirect("./index.php?r=user/detail&id=$id");
+//					$this->redirect("./index.php?r=user/detail&id=$id");
+					$this->redirect("./index.php?r=user/show");
 				}
 				else {
 					//var_dump($user_info->getErrors());

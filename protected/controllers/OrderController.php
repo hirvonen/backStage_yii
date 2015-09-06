@@ -29,7 +29,12 @@ class OrderController extends Controller
 			array(
 				'allow',
 				'actions'=>array('show','detail','update','add','showOtherOrder','selectCust','AddOrderItem','addOther','UpdateOther'),
-				'users'=>array('superadmin','admin'),
+				'users'=>array('superadmin'),
+			),
+            array(
+				'allow',
+				'actions'=>array('show','detail','update','add','showOtherOrder','selectCust','AddOrderItem','addOther','UpdateOther'),
+                'users'=>array('admin','zhangli','shenjia','zengkan','wangjiayi','weixuejiao'),
 			),
 			array(
 				'deny',

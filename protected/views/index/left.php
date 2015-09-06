@@ -183,13 +183,13 @@
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td><a class=menuchild
 					       href="./index.php?r=aptm/show"
-					       target=right>预约一览</a></td></tr>
+					       target=right>预约(疗程)一览</a></td></tr>
 				<tr height=20>
 					<td align=middle width=30><img height=9
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td><a class=menuchild
 					       href="./index.php?r=aptm/cal"
-					       target=right>预约视图</a></td></tr>
+					       target=right>预约安排视图</a></td></tr>
 				<tr height=4>
 					<td colspan=2></td></tr></table>
 			<table cellspacing=0 cellpadding=0 width=150 border=0>

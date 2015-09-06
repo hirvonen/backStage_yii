@@ -56,17 +56,17 @@
 <div style="font-size: 13px; margin: 10px 5px;">
 	<table class="table_a" border="1" width="100%">
 		<tbody><tr bgcolor="#4169e1" style="font-weight: bold;">
-			<td align="center">操作</td>
-			<td>用户编号</td>
+<!--			<td align="center">操作</td>-->
+			<td align="center">用户编号</td>
 			<td>用户种别</td>
 			<td>用户姓名</td>
-			<td>用户注册来源</td>
+<!--			<td>用户注册来源</td>-->
 			<td>用户名</td>
 			<td>创建时间</td>
 		</tr>
 		<?php
         $i=0;
-		foreach ($user_info as $_v) {
+		foreach (array_reverse($user_info) as $_v) {
 			?>
 			<tr <?php
                 if($i%2 != 0){
@@ -77,8 +77,9 @@
                 }
                 ?>
                 id="user1">
-				<td><a href="./index.php?r=user/detail&id=<?php echo $_v->pk_usr_id ?>">详细</a></td>
-				<td><?php echo $_v->pk_usr_id ?></td>
+<!--				<td><a href="./index.php?r=user/detail&id=--><?php //echo $_v->pk_usr_id ?><!--">详细</a></td>-->
+<!--				<td>--><?php //echo $_v->pk_usr_id ?><!--</td>-->
+				<td><a href="./index.php?r=user/update&id=<?php echo $_v->pk_usr_id ?>"><?php echo $_v->pk_usr_id ?></a></td>
 				<td><?php
 					if($_v->usr_kind == 0) {
 						echo "管理员";
@@ -125,26 +126,26 @@
 					}
 					?>
 				</td>
-				<td><?php
-					if($_v->usr_reg_kind == 0) {
-						echo "微信用户";
-					}
-					elseif($_v->usr_reg_kind == 1){
-						echo "新浪微博用户";
-					}
-					elseif($_v->usr_reg_kind == 2){
-						echo "QQ用户";
-					}
-					elseif($_v->usr_reg_kind == 3){
-						echo "腾讯微博用户";
-					}
-					elseif($_v->usr_reg_kind == 4){
-						echo "网站注册用户";
-					}
-					else{
-						echo "未知";
-					}
-					?></a></td>
+<!--				<td>--><?php
+//					if($_v->usr_reg_kind == 0) {
+//						echo "微信用户";
+//					}
+//					elseif($_v->usr_reg_kind == 1){
+//						echo "新浪微博用户";
+//					}
+//					elseif($_v->usr_reg_kind == 2){
+//						echo "QQ用户";
+//					}
+//					elseif($_v->usr_reg_kind == 3){
+//						echo "腾讯微博用户";
+//					}
+//					elseif($_v->usr_reg_kind == 4){
+//						echo "网站注册用户";
+//					}
+//					else{
+//						echo "未知";
+//					}
+//					?><!--</a></td>-->
 				<td><?php echo $_v->usr_username; ?></a></td>
 				<td><?php echo $_v->usr_create_time; ?></a></td>
 			</tr>

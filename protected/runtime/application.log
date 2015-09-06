@@ -6534,3 +6534,20 @@ Stack trace:
 REQUEST_URI=/yii_learn/backstage/index.php?r=order/updateOther&id=10182
 HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=order/showOtherOrder&kind=2
 ---
+2015/09/06 13:49:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('add_step1')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('user/add_step1')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=user/add_step1
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=user/show
+---

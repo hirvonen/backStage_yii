@@ -31,7 +31,8 @@
 	                    }
 	                ?></span>
 	            <span style="float:right;margin-right: 8px;font-weight: bold">
-                    <a style="text-decoration: none" href="./index.php?r=user/detail&id=<?php echo $user_info->pk_usr_id; ?>">【返回】</a>
+<!--                    <a style="text-decoration: none" href="./index.php?r=user/detail&id=--><?php //echo $user_info->pk_usr_id; ?><!--">【返回】</a>-->
+                    <a style="text-decoration: none" href="./index.php?r=user/show">【返回】</a>
                 </span>
             </span>
 </div>

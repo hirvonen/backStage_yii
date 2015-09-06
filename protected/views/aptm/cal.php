@@ -187,7 +187,7 @@
 
 	//输出未安排的1元体验列表
 	echo "<tr>";
-	echo "<td width='120'>未安排(1元)</td>";
+	echo "<td width='120'>未安排(活动)</td>";
 	$contact_model = Contact::model();
 	$day = date("Y-m-d", time());
 	$query = 'select * from tbl_contact where con_time >='.$day;
@@ -281,7 +281,7 @@
 						$district = '崇明';
 						break;
 					default:
-						$district = '上海';
+						$district = $null_contact[$k]->con_district;
 						break;
 				}
 				$starttime = date('H:i', strtotime($null_contact[$k]->con_time));;
@@ -480,7 +480,7 @@
 
 		//再来一行，输出1元体验的预约情况
 		echo '<tr>';
-		echo '<td>'.$beau_item->beau_realname.'(1元)'.'</td>';
+		echo '<td>'.$beau_item->beau_realname.'(活动)'.'</td>';
 		$contact_model = Contact::model();
 		$day = date("Y-m-d", time());
 		$query = 'select * from tbl_contact where con_time >='.$day.' and con_beau_id ='.$beau_item->pk_beau_id;
@@ -586,7 +586,7 @@
 						$district = '崇明';
 						break;
 					default:
-						$district = '上海';
+						$district = $contact_day_info[$j][$k]->con_district;
 						break;
 				}
 				$starttime = date('H:i', strtotime($contact_day_info[$j][$k]->con_time));;
