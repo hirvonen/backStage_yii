@@ -128,36 +128,56 @@
 	echo '</tr>';
 
 	/**准备表格具体内容**/
-	//李启琴（1000009）
-	$query = 'select * from tbl_appointment where aptm_beau_id=1000009';
-	$aptm_select_info = $aptm_model->findAllBySql($query);
-	$aptm_day_info = array();
-	foreach ($aptm_select_info as $_v) {
-		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
-		if($aptm_time==$day){
-			$aptm_day_info[count($aptm_day_info)] = $_v;
+	$beau_model = Beautician::model();
+	$query = 'select * from tbl_beautician where beau_valid=1';
+	$beau_info = $beau_model->findAllBySql($query);
+	$index = 0;
+	foreach ($beau_info as $_beau_v) {
+		$query = 'select * from tbl_appointment where aptm_beau_id='.$_beau_v->pk_beau_id;
+		$aptm_select_info = $aptm_model->findAllBySql($query);
+		$aptm_day_info = array();
+		foreach ($aptm_select_info as $_v) {
+			$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
+			if($aptm_time==$day){
+				$aptm_day_info[count($aptm_day_info)] = $_v;
+			}
 		}
+		//查找上午中午下午
+		$beau_aptm_infomation = beau_infomation($aptm_day_info);
+		$day_info[$index] = $beau_aptm_infomation;
+		$index++;
 	}
-	//查找上午中午下午
-	$beau_aptm_infomation = beau_infomation($aptm_day_info);
-	$day_info[0] = $beau_aptm_infomation;
 
-	//范小荣（1000011）
-	$query = 'select * from tbl_appointment where aptm_beau_id=1000011';
-	$aptm_select_info = $aptm_model->findAllBySql($query);
-	$aptm_day_info = array();
-	foreach ($aptm_select_info as $_v) {
-		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
-		if($aptm_time==$day){
-			$aptm_day_info[count($aptm_day_info)] = $_v;
-		}
-	}
-	//查找上午中午下午
-	$beau_aptm_infomation = beau_infomation($aptm_day_info);
-	$day_info[1] = $beau_aptm_infomation;
-
-//	//文雪霞（1000013）
-//	$query = 'select * from tbl_appointment where aptm_beau_id=1000013';
+//	//李启琴（1000009）
+//	$query = 'select * from tbl_appointment where aptm_beau_id=1000009';
+//	$aptm_select_info = $aptm_model->findAllBySql($query);
+//	$aptm_day_info = array();
+//	foreach ($aptm_select_info as $_v) {
+//		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
+//		if($aptm_time==$day){
+//			$aptm_day_info[count($aptm_day_info)] = $_v;
+//		}
+//	}
+//	//查找上午中午下午
+//	$beau_aptm_infomation = beau_infomation($aptm_day_info);
+//	$day_info[0] = $beau_aptm_infomation;
+//
+//	//范小荣（1000011）
+//	$query = 'select * from tbl_appointment where aptm_beau_id=1000011';
+//	$aptm_select_info = $aptm_model->findAllBySql($query);
+//	$aptm_day_info = array();
+//	foreach ($aptm_select_info as $_v) {
+//		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
+//		if($aptm_time==$day){
+//			$aptm_day_info[count($aptm_day_info)] = $_v;
+//		}
+//	}
+//	//查找上午中午下午
+//	$beau_aptm_infomation = beau_infomation($aptm_day_info);
+//	$day_info[1] = $beau_aptm_infomation;
+//
+//	//张小倩（1000060）
+//	$query = 'select * from tbl_appointment where aptm_beau_id=1000060';
 //	$aptm_select_info = $aptm_model->findAllBySql($query);
 //	$aptm_day_info = array();
 //	foreach ($aptm_select_info as $_v) {
@@ -170,8 +190,8 @@
 //	$beau_aptm_infomation = beau_infomation($aptm_day_info);
 //	$day_info[2] = $beau_aptm_infomation;
 //
-//	//薛惠艺（1000014）
-//	$query = 'select * from tbl_appointment where aptm_beau_id=1000014';
+//	//魏雪娇（1000089）
+//	$query = 'select * from tbl_appointment where aptm_beau_id=1000089';
 //	$aptm_select_info = $aptm_model->findAllBySql($query);
 //	$aptm_day_info = array();
 //	foreach ($aptm_select_info as $_v) {
@@ -183,65 +203,46 @@
 //	//查找上午中午下午
 //	$beau_aptm_infomation = beau_infomation($aptm_day_info);
 //	$day_info[3] = $beau_aptm_infomation;
-
-	//张小倩（1000060）
-	$query = 'select * from tbl_appointment where aptm_beau_id=1000060';
-	$aptm_select_info = $aptm_model->findAllBySql($query);
-	$aptm_day_info = array();
-	foreach ($aptm_select_info as $_v) {
-		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
-		if($aptm_time==$day){
-			$aptm_day_info[count($aptm_day_info)] = $_v;
-		}
-	}
-	//查找上午中午下午
-	$beau_aptm_infomation = beau_infomation($aptm_day_info);
-	$day_info[2] = $beau_aptm_infomation;
-
-	//魏雪娇（1000089）
-	$query = 'select * from tbl_appointment where aptm_beau_id=1000089';
-	$aptm_select_info = $aptm_model->findAllBySql($query);
-	$aptm_day_info = array();
-	foreach ($aptm_select_info as $_v) {
-		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
-		if($aptm_time==$day){
-			$aptm_day_info[count($aptm_day_info)] = $_v;
-		}
-	}
-	//查找上午中午下午
-	$beau_aptm_infomation = beau_infomation($aptm_day_info);
-	$day_info[3] = $beau_aptm_infomation;
+//
+//	//宋纳纳（1000100）
+//	$query = 'select * from tbl_appointment where aptm_beau_id=1000100';
+//	$aptm_select_info = $aptm_model->findAllBySql($query);
+//	$aptm_day_info = array();
+//	foreach ($aptm_select_info as $_v) {
+//		$aptm_time = date("Y-m-d", strtotime($_v->aptm_time));
+//		if($aptm_time==$day){
+//			$aptm_day_info[count($aptm_day_info)] = $_v;
+//		}
+//	}
+//	//查找上午中午下午
+//	$beau_aptm_infomation = beau_infomation($aptm_day_info);
+//	$day_info[4] = $beau_aptm_infomation;
 
 	/**输出表格**/
-	for($i=0;$i<4;++$i) {   //理疗师loop
+	for($i=0;$i<count($beau_info);++$i) {   //理疗师loop
 		if($i%2==0){
 			echo '<tr bgcolor="#add8e6">';
 		}else{
 			echo '<tr>';
 		}
-		switch($i){
-			case 0:
-				echo '<td>李启琴</td>';
-				break;
-			case 1:
-				echo '<td>范小荣</td>';
-				break;
+		echo '<td>'.$beau_info[$i]->beau_realname.'</td>';
+//		switch($i){
+//			case 0:
+//				echo '<td>李启琴</td>';
+//				break;
+//			case 1:
+//				echo '<td>范小荣</td>';
+//				break;
 //			case 2:
-//				echo '<td>文</td>';
+//				echo '<td>张小倩</td>';
 //				break;
 //			case 3:
-//				echo '<td>薛惠艺</td>';
+//				echo '<td>魏雪娇</td>';
 //				break;
-			case 2:
-				echo '<td>张小倩</td>';
-				break;
-			case 3:
-				echo '<td>魏雪娇</td>';
-				break;
-			default:
-				echo '<td>未知</td>';
-				break;
-		}
+//			default:
+//				echo '<td>未知</td>';
+//				break;
+//		}
 
 		echo '<td>服务时间</td>';
 		for($j=0;$j<3;++$j){    //上午中午下午loop

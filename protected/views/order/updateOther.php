@@ -57,7 +57,7 @@
                         break;
                     case OTHER_KIND_88YUAN:
                     default:
-                        $options = array ('88'=>'透润美肤&经络养生');
+                        $options = array ('4'=>'经络养生','5'=>'透润美肤');
                         break;
                 }
                 echo $form->dropDownList($contact_info,'con_prefer',$options);

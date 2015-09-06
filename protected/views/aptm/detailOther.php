@@ -45,12 +45,21 @@
 	}
 
 	//构建服务项目dropDownList的option用的数组
-	$code_model = Code::model();
-	$query = 'select * from tbl_code where code_tbl_name='.'"tbl_contact"'.' and '.'code_name='.'"con_prefer"';
-	$code_info = $code_model->findAllBySql($query);
-	$prefer_options = array();
-	foreach($code_info as $_code_v) {
-		$prefer_options[$_code_v->code_value] = $_code_v->code_meaning;
+//	$code_model = Code::model();
+//	$query = 'select * from tbl_code where code_tbl_name='.'"tbl_contact"'.' and '.'code_name='.'"con_prefer"';
+//	$code_info = $code_model->findAllBySql($query);
+//	$prefer_options = array();
+//	foreach($code_info as $_code_v) {
+//		$prefer_options[$_code_v->code_value] = $_code_v->code_meaning;
+//	}
+	switch($contact_info->con_kind) {
+		case OTHER_KIND_1YUAN:
+			$prefer_options = array ('1'=>'透润美肤', '2'=>'经络养生', '3'=>'经络纤体/淋巴排毒');
+			break;
+		case OTHER_KIND_88YUAN:
+		default:
+		$prefer_options = array ('4'=>'经络养生','5'=>'透润美肤');
+			break;
 	}
 
 	//构建区域dropDownList的option用的数组

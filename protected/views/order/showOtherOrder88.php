@@ -92,8 +92,11 @@
                 <td><?php echo $_v->con_mobile ?></td>
                 <td><?php
                     switch($_v->con_prefer) {
-                        case 88:
-                            echo "透润美肤&经络养生";
+                        case 4:
+                            echo "经络养生";
+                            break;
+                        case 5:
+                            echo "透润美肤";
                             break;
                         default:
                             echo "出错啦001!！";

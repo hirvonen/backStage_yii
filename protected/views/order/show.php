@@ -61,8 +61,8 @@
 <div style="font-size: 13px; margin: 10px 5px;">
 	<table class="table_a" border="1" width="100%">
 		<tbody><tr bgcolor="#4169e1" style="font-weight: bold;">
-			<td align="center">操作</td>
-			<td>订单编号</td>
+<!--			<td align="center">操作</td>-->
+			<td align="center">订单编号</td>
 <!--			<td>顾客编号</td>-->
 			<td>订单状态</td>
 			<td>顾客姓名</td>
@@ -84,8 +84,9 @@
                     echo 'bgcolor="#ffffff"';
                 }
                 ?> id="user1">
-				<td><a href="./index.php?r=order/detail&id=<?php echo $_v->pk_ord_id ?>">详细</a></td>
-				<td><?php echo $_v->pk_ord_id ?></td>
+<!--				<td><a href="./index.php?r=order/detail&id=--><?php //echo $_v->pk_ord_id ?><!--">详细</a></td>-->
+<!--				<td>--><?php //echo $_v->pk_ord_id ?><!--</td>-->
+                <td><a href="./index.php?r=order/detail&id=<?php echo $_v->pk_ord_id ?>"><?php echo $_v->pk_ord_id ?></a></td>
 <!--				<td>--><?php //echo $_v->ord_cust_id ?><!--</td>-->
 				<td><?php
 					switch($_v->ord_status) {
