@@ -156,19 +156,32 @@
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td width="110" ><a class=menuchild
 					                    href="./index.php?r=order/show"
-					                    target=right>订单一览（买卡）</a></td></tr>
+					                    target=right>订单一览(疗程)</a></td></tr>
 				<tr height=20>
 					<td align=middle width=30><img height=9
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td width="110" ><a class=menuchild
-					                    href="./index.php?r=order/showOtherOrder&kind=1"
-					                    target=right>订单一览（1元）</a></td></tr>
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_1YUAN?>"
+					                    target=right>订单一览(1元)</a></td></tr>
 				<tr height=20>
 					<td align=middle width=30><img height=9
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td width="110" ><a class=menuchild
-					                    href="./index.php?r=order/showOtherOrder&kind=2"
-					                    target=right>订单一览（88元）</a></td></tr></table>
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_88YUAN ?>"
+					                    target=right>订单一览(88元)</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td width="110" ><a class=menuchild
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_SGB?>"
+					                    target=right>订单一览(圣戈班)</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td width="110" ><a class=menuchild
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_168YUAN?>"
+					                    target=right>订单一览(168元)</a></td></tr>
+			</table>
 			<table cellspacing=0 cellpadding=0 width=150 border=0>
 				<tr height=22>
 					<td style="padding-left: 30px" background=<?php echo BACK_IMG_URL; ?>menu_bt.jpg><a
@@ -183,7 +196,7 @@
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
 					<td><a class=menuchild
 					       href="./index.php?r=aptm/show"
-					       target=right>预约(疗程)一览</a></td></tr>
+					       target=right>预约一览(疗程)</a></td></tr>
 				<tr height=20>
 					<td align=middle width=30><img height=9
 					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>

@@ -16,13 +16,20 @@
                         echo '<span style="float:left">当前位置是：订单管理-》添加订单（1元订单）</span>';
                         break;
                     case OTHER_KIND_88YUAN:
+                        echo '<span style="float:left">当前位置是：订单管理-》添加订单（88元订单）</span>';
+                        break;
+                    case OTHER_KIND_SGB:
+                        echo '<span style="float:left">当前位置是：订单管理-》添加订单（圣戈班）</span>';
+                        break;
+                    case OTHER_KIND_168YUAN:
+                        echo '<span style="float:left">当前位置是：订单管理-》添加订单（168元订单）</span>';
+                        break;
                     default:
-                    echo '<span style="float:left">当前位置是：订单管理-》添加订单（88元订单）</span>';
-                    break;
+                        break;
                 }
                 ?>
 	            <span style="float:right;margin-right: 8px;font-weight: bold">
-                    <a style="text-decoration: none" href="./index.php?r=order/showOtherOrder&kind=<?php echo $kind; ?>">【返回】</a>
+                    <a style="text-decoration: none" href="./index.php?r=order/showOtherOrder&kind=<?php echo $kind ?>">【返回】</a>
                 </span>
             </span>
 </div>
@@ -66,8 +73,16 @@
                         $options = array ('1'=>'透润美肤', '2'=>'经络养生', '3'=>'经络纤体/淋巴排毒');
                         break;
                     case OTHER_KIND_88YUAN:
+                    case OTHER_KIND_SGB:
+                        $options = array ('4'=>'经络养生', '5'=>'透润美肤');
+                        break;
+                    case OTHER_KIND_168YUAN:
+                        $options = array ('6'=>'深层淋巴净排','7'=>'经络纤体','8'=>'轻盈塑体（局部）','9'=>'经络养生调理','10'=>'肩颈调理',
+                            '11'=>'温肾固本','12'=>'肝胆养护','13'=>'补气养血','14'=>'关节理疗（膝盖）','15'=>'透润美肤',
+                            '16'=>'白皙美肤','17'=>'3D紧致美肤','18'=>'乳腺疏通散结/开奶','19'=>'骨盆调整','20'=>'胸部紧致提升');
+                        break;
                     default:
-                        $options = array ('88'=>'透润美肤&经络养生');
+                        $options = array ('0'=>'出错啦！');
                         break;
                 }
                 echo $form->dropDownList($contact_info,'con_prefer',$options);

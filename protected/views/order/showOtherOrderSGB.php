@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-	<title>订单一览（88元）</title>
+	<title>订单一览（圣戈班）</title>
 
 	<link href="<?php echo BACK_CSS_URL; ?>mine.css" type="text/css" rel="stylesheet" />
 </head>
@@ -13,9 +13,9 @@
 </style>
 <div class="div_head">
             <span>
-                <span style="float: left;">当前位置是：订单管理-》订单一览（88元）</span>
+                <span style="float: left;">当前位置是：订单管理-》订单一览（圣戈班）</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="./index.php?r=order/addOther&kind=<?php echo OTHER_KIND_88YUAN ?>">【添加88元订单】</a>
+                    <a style="text-decoration: none;" href="./index.php?r=order/addOther&kind=<?php echo OTHER_KIND_SGB ?>">【添加圣戈班订单】</a>
                 </span>
             </span>
 </div>

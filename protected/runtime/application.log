@@ -6551,3 +6551,414 @@ Stack trace:
 REQUEST_URI=/yii_learn/backstage/index.php?r=user/add_step1
 HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=user/show
 ---
+2015/09/06 17:44:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('order/show')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=order/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showOtherOrder')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('order/showOther...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=order/showOtherOrder&kind=1
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('user/show')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=user/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showService')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('commodity/showS...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=commodity/showService
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showProduct')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('commodity/showP...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=commodity/showProduct
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('order/show')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=order/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showOtherOrder')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('order/showOther...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=order/showOtherOrder&kind=1
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showOtherOrder')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('order/showOther...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=order/showOtherOrder&kind=2
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/show')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('cal')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/cal')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/cal
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('showSale')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('commodity/showS...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=commodity/showSale
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('selectAptmByDay')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/selectAptm...')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/selectAptmByDay
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 17:44:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('user/logout')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=user/logout
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/head
+---
+2015/09/06 17:44:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('logout')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('user/logout')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=user/logout
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/head
+---
+2015/09/06 17:46:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('user/show')
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=user/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/06 18:11:19 [error] [php] Illegal offset type (/Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/dayCal.php:146)
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(869): AptmController->renderFile()
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(321): AptmController->renderPartial()
+#2 unknown(0): AptmController->actionDayCal()
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): AptmController->runAction()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): AptmController->filterAccessControl()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): AptmController->runActionWithFilters()
+#13 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): AptmController->run()
+#14 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CWebApplication->run()
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/dayCal&day=2015-09-07
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/dayCal.php (146)
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php (321)
+in /Users/alfredzhang/Sites/yii_learn/backstage/index.php (15)
+2015/09/06 18:13:03 [error] [php] Illegal offset type (/Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/dayCal.php:146)
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(869): AptmController->renderFile()
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(321): AptmController->renderPartial()
+#2 unknown(0): AptmController->actionDayCal()
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): AptmController->runAction()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): AptmController->filterAccessControl()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): AptmController->runActionWithFilters()
+#13 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): AptmController->run()
+#14 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CWebApplication->run()
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/dayCal&day=2015-09-07
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/dayCal.php (146)
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php (321)
+in /Users/alfredzhang/Sites/yii_learn/backstage/index.php (15)
+2015/09/06 18:37:47 [error] [php] Use of undefined constant OTHER_KIND_1YUAN - assumed 'OTHER_KIND_1YUAN' (/Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/detailOther.php:56)
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(869): AptmController->renderFile()
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(279): AptmController->renderPartial()
+#2 unknown(0): AptmController->actionDetailOther()
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): AptmController->runAction()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): AptmController->filterAccessControl()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): AptmController->runActionWithFilters()
+#13 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): AptmController->run()
+#14 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CWebApplication->run()
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/detailOther&id=10180&source_page=cal
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/detailOther.php (56)
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php (279)
+in /Users/alfredzhang/Sites/yii_learn/backstage/index.php (15)
+2015/09/08 00:41:29 [error] [exception.CException] exception 'CException' with message 'AptmController and its behaviors do not have a method or closure named "http_request".' in /Users/alfredzhang/Sites/yii_learn/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/show.php(222): CComponent->__call('http_request', Array)
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/show.php(222): AptmController->http_request('https://api.wei...')
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CBaseController.php(126): require('/Users/alfredzh...')
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/alfredzh...', Array, true)
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(869): CBaseController->renderFile('/Users/alfredzh...', Array, true)
+#5 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(88): CController->renderPartial('show', Array)
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(49): AptmController->actionShow()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#16 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/show')
+#17 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/08 00:42:15 [error] [exception.CException] exception 'CException' with message 'AptmController and its behaviors do not have a method or closure named "http_request".' in /Users/alfredzhang/Sites/yii_learn/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/show.php(222): CComponent->__call('http_request', Array)
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/views/aptm/show.php(222): AptmController->http_request('https://api.wei...')
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CBaseController.php(126): require('/Users/alfredzh...')
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/alfredzh...', Array, true)
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(869): CBaseController->renderFile('/Users/alfredzh...', Array, true)
+#5 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(88): CController->renderPartial('show', Array)
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(49): AptmController->actionShow()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#16 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/show')
+#17 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/08 00:43:23 [error] [exception.CException] exception 'CException' with message 'AptmController and its behaviors do not have a method or closure named "http_request".' in /Users/alfredzhang/Sites/yii_learn/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(68): CComponent->__call('http_request', Array)
+#1 /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php(68): AptmController->http_request('https://api.wei...')
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/actions/CInlineAction.php(49): AptmController->actionShow()
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#10 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): CController->run('show')
+#12 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController('aptm/show')
+#13 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/show
+HTTP_REFERER=http://localhost/yii_learn/backstage/index.php?r=index/left
+---
+2015/09/08 00:43:48 [error] [php] Undefined variable: access_token (/Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php:94)
+Stack trace:
+#0 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(133): AptmController->runAction()
+#1 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CInlineFilter.php(58): AptmController->filterAccessControl()
+#4 /Users/alfredzhang/Sites/yii_learn/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/alfredzhang/Sites/yii_learn/framework/web/CController.php(265): AptmController->runActionWithFilters()
+#7 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(282): AptmController->run()
+#8 /Users/alfredzhang/Sites/yii_learn/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/alfredzhang/Sites/yii_learn/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/alfredzhang/Sites/yii_learn/backstage/index.php(15): CWebApplication->run()
+REQUEST_URI=/yii_learn/backstage/index.php?r=aptm/show
+in /Users/alfredzhang/Sites/yii_learn/backstage/protected/controllers/AptmController.php (94)
+in /Users/alfredzhang/Sites/yii_learn/backstage/index.php (15)

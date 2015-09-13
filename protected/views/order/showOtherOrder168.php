@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-	<title>订单一览（88元）</title>
+	<title>订单一览（168元）</title>
 
 	<link href="<?php echo BACK_CSS_URL; ?>mine.css" type="text/css" rel="stylesheet" />
 </head>
@@ -13,9 +13,9 @@
 </style>
 <div class="div_head">
             <span>
-                <span style="float: left;">当前位置是：订单管理-》订单一览（88元）</span>
+                <span style="float: left;">当前位置是：订单管理-》订单一览（168元）</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="./index.php?r=order/addOther&kind=<?php echo OTHER_KIND_88YUAN ?>">【添加88元订单】</a>
+                    <a style="text-decoration: none;" href="./index.php?r=order/addOther&kind=<?php echo OTHER_KIND_168YUAN ?>">【添加168元订单】</a>
                 </span>
             </span>
 </div>
@@ -92,11 +92,50 @@
                 <td><?php echo $_v->con_mobile ?></td>
                 <td><?php
                     switch($_v->con_prefer) {
-                        case 4:
-                            echo "经络养生";
+                        case 6:
+                            echo "深层淋巴净排";
                             break;
-                        case 5:
+                        case 7:
+                            echo "经络纤体";
+                            break;
+                        case 8:
+                            echo "轻盈塑体（局部）";
+                            break;
+                        case 9:
+                            echo "经络养生调理";
+                            break;
+                        case 10:
+                            echo "肩颈调理";
+                            break;
+                        case 11:
+                            echo "温肾固本";
+                            break;
+                        case 12:
+                            echo "肝胆养护";
+                            break;
+                        case 13:
+                            echo "补气养血";
+                            break;
+                        case 14:
+                            echo "关节理疗（膝盖）";
+                            break;
+                        case 15:
                             echo "透润美肤";
+                            break;
+                        case 16:
+                            echo '白皙美肤';
+                            break;
+                        case 17:
+                            echo '3D紧致美肤';
+                            break;
+                        case 18:
+                            echo '乳腺疏通散结/开奶';
+                            break;
+                        case 19:
+                            echo '骨盆调整';
+                            break;
+                        case 20:
+                            echo '胸部紧致提升';
                             break;
                         default:
                             echo "出错啦001!！";

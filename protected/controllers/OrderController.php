@@ -4,8 +4,6 @@
  * 订单控制器
  * Class OrderController
  */
-define('OTHER_KIND_1YUAN',1);
-define('OTHER_KIND_88YUAN',2);
 class OrderController extends Controller
 {
 	/**
@@ -112,18 +110,24 @@ class OrderController extends Controller
 //        else{
 //            $order_info = $order_model->findAll();
 //        }
-        if($kind == OTHER_KIND_1YUAN) {
-            $query = 'select * from tbl_contact where con_kind = "1"';//con_kind暂时未采用
-//            $query = 'select * from tbl_contact where con_prefer != "88"';
-            $order_info = $order_model->findAllBySql($query);
-            $this->renderPartial("showOtherOrder1",array('order_info'=>$order_info));
-        } elseif($kind == OTHER_KIND_88YUAN) {
-            $query = 'select * from tbl_contact where con_kind = "2"';//con_kind暂时未采用
-//            $query = 'select * from tbl_contact where con_prefer = "88"';
-            $order_info = $order_model->findAllBySql($query);
-            $this->renderPartial("showOtherOrder88",array('order_info'=>$order_info));
-        } else {
-            echo '<script>alert("出错啦！并没有这样的订单类型！")';
+        $query = 'select * from tbl_contact where con_kind = '.$kind;
+        $order_info = $order_model->findAllBySql($query);
+        switch($kind) {
+            case OTHER_KIND_1YUAN:
+                $this->renderPartial("showOtherOrder1", array('order_info' => $order_info));
+                break;
+            case OTHER_KIND_88YUAN:
+                $this->renderPartial("showOtherOrder88", array('order_info' => $order_info));
+                break;
+            case OTHER_KIND_SGB:
+                $this->renderPartial("showOtherOrderSGB", array('order_info' => $order_info));
+                break;
+            case OTHER_KIND_168YUAN:
+                $this->renderPartial("showOtherOrder168", array('order_info' => $order_info));
+                break;
+            default:
+                echo '<script>alert("出错啦！并没有这样的订单类型！")';
+                break;
         }
     }
 

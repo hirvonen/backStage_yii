@@ -219,6 +219,11 @@
 						//经络纤体/淋巴排毒(tbl_commodity:10001)
 						$duration += 90;
 						break;
+					case 4:
+					case 5:
+						//88元及圣戈班套餐
+						$duration += 60;
+						break;
 					default:
 						//种别错误，时长默认设为90分钟（60+30）
 						$duration += 60;

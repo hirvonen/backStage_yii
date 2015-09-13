@@ -36,7 +36,7 @@ class UserController extends Controller
 			),
 			array(
 				'allow',
-				'actions'=>array('login'),
+				'actions'=>array('login','logout'),
 				'users'=>array('*'),
 			),
 			array(
