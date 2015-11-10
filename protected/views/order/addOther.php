@@ -24,6 +24,12 @@
                     case OTHER_KIND_168YUAN:
                         echo '<span style="float:left">当前位置是：订单管理-》添加订单（168元订单）</span>';
                         break;
+                    case OTHER_KIND_1111:
+                        echo '<span style="float:left">当前位置是：订单管理-》添加订单（双11订单）</span>';
+                        break;
+                    case OTHER_KIND_HAOKANG:
+                        echo '<span style="float:left">当前位置是：订单管理-》添加订单（好慷订单）</span>';
+                        break;
                     default:
                         break;
                 }
@@ -74,6 +80,7 @@
                         break;
                     case OTHER_KIND_88YUAN:
                     case OTHER_KIND_SGB:
+                    case OTHER_KIND_LY168YUAN:
                         $options = array ('4'=>'经络养生', '5'=>'透润美肤');
                         break;
                     case OTHER_KIND_168YUAN:

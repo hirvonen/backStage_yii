@@ -144,7 +144,64 @@
                     ?></td>
                 <td><?php echo $_v->con_time; ?></td>
                 <td><?php echo $_v->con_address; ?></td>
-                <td><?php echo $_v->con_district; ?></td>
+                <td><?php
+                    switch($_v->con_district) {
+                        case 1:
+                            echo '黄浦';
+                            break;
+                        case 2:
+                            echo '静安';
+                            break;
+                        case 3:
+                            echo '徐汇';
+                            break;
+                        case 4:
+                            echo '卢湾';
+                            break;
+                        case 5:
+                            echo '长宁';
+                            break;
+                        case 6:
+                            echo '闸北';
+                            break;
+                        case 7:
+                            echo '虹口';
+                            break;
+                        case 8:
+                            echo '杨浦';
+                            break;
+                        case 9:
+                            echo '浦东';
+                            break;
+                        case 10:
+                            echo '普陀';
+                            break;
+                        case 11:
+                            echo '闵行';
+                            break;
+                        case 12:
+                            echo '宝山';
+                            break;
+                        case 13:
+                            echo '嘉定';
+                            break;
+                        case 14:
+                            echo '松江';
+                            break;
+                        case 15:
+                            echo '青浦';
+                            break;
+                        case 16:
+                            echo '奉贤';
+                            break;
+                        case 17:
+                            echo '金山';
+                            break;
+                        case 18:
+                            echo '崇明';
+                            break;
+                    }
+                    ?></td>
                 <td><?php
                     switch($_v->con_flag) {
                         case 1:

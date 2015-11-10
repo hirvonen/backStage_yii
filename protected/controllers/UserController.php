@@ -26,12 +26,13 @@ class UserController extends Controller
 		return array(
 			array(
 				'allow',
-				'actions'=>array('del','detail','initPassword','logout','show','chgpwd','update','add_step1','add_step2'),
+				'actions'=>array('del','detail','initPassword','logout','show','chgpwd','update',
+					'add_step1','add_step2','showCust','updateCust','addCustHealthReply'),
 				'users'=>array('superadmin'),
 			),
 			array(
 				'allow',
-				'actions'=>array('detail','logout','show','chgpwd','update'),
+				'actions'=>array('detail','logout','show','chgpwd','update','showCust','updateCust','addCustHealthReply'),
 				'users'=>array('admin','zhangli','shenjia','zengkan','wangjiayi','weixuejiao'),
 			),
 			array(
@@ -559,5 +560,122 @@ class UserController extends Controller
 		}
 
 		$this->renderPartial('add_step2', array("user_info" => $user_model, "customer_info" => $customer_model,"image_model"=>$image_model,"user_kind"=>2));
+	}
+
+	/**
+	 * 顾客一览
+	 */
+	public function actionShowCust()
+	{
+		$user_model = User::model();
+//		$query = 'select * from tbl_user where usr_kind = 2';
+//		$user_info = $user_model->findAll();
+
+		$cust_model = Customer::model();
+		$cust_info = $cust_model->findAll();
+
+		$this->renderPartial("showCust",array('user_info'=>$user_model, 'cust_info'=>$cust_info));
+	}
+
+	/**
+	 * 顾客详细信息(包括客户详细信息及健康信息)确认&修改
+	 */
+	public function actionUpdateCust($id)
+	{
+		$user_model = User::model();
+		$user_info = $user_model->findByPk($id);
+
+		$cust_model = Customer::model();
+		$cust_info = $cust_model->findByPk($id);
+
+		$addr_model = Address::model();
+		$query = 'select * from tbl_address where addr_cust_id='.$id;
+		$addr_info = $addr_model->findBySql($query);
+
+		$custhi_model = Cust_Health_Info::model();
+		$custhi_info = $custhi_model->findByPk($id);
+		if(!isset($custhi_info)) {
+			//未找到记录的话，需要新建记录
+			$custhi_info = new Cust_Health_Info();
+		}
+
+		$custhr_model = Cust_Health_Reply::model();
+		$query = 'select * from tbl_cust_health_reply where custhr_cust_id='.$id;
+		$custhr_info = $custhr_model->findAllBySql($query);
+
+		if(isset($_POST['User'])) {
+			if(isset($user_info)) {
+				$user_info->attributes = $_POST['User'];
+				$user_info->save();
+			}
+			if(isset($cust_info)) {
+				$cust_info->attributes = $_POST['Customer'];
+
+				//将作为用户名的手机号填入顾客信息里
+				$cust_info->cust_mobile1 = $_POST['User']['usr_username'];
+
+				//将用户喜爱的项目按位计算并保存
+				$cust_prefer = 0;
+				for($i=0; $i<count($_POST['Customer']['cust_prefer']); $i++) {
+					if($_POST['Customer']['cust_prefer'][$i]) {
+						$cust_prefer |= (int)($_POST['Customer']['cust_prefer'][$i]);
+					}
+				}
+				$cust_info->cust_prefer = $cust_prefer;
+
+				//将用户喜爱的美疗师按位计算并保存
+				$cust_beautician = 0;
+				for($i=0; $i<count($_POST['Customer']['cust_beautician']); $i++) {
+					if($_POST['Customer']['cust_beautician'][$i]) {
+						$cust_beautician |= (int)($_POST['Customer']['cust_beautician'][$i]);
+					}
+				}
+				$cust_info->cust_beautician = $cust_beautician;
+				$cust_info->save();
+			}
+			if(isset($addr_info)) {
+				$addr_info->attributes = $_POST['Address'];
+				$addr_info->save();
+			}
+			if(isset($custhi_info)) {
+				$custhi_info->attributes = $_POST['Cust_Health_Info'];
+				$custhi_info->pk_custhi_cust_id = $id;
+				$custhi_info->custhi_height = (float)($_POST['Cust_Health_Info']['custhi_height']);
+				$custhi_info->custhi_weight = (float)($_POST['Cust_Health_Info']['custhi_weight']);
+				$custhi_info->custhi_date = date("Y-m-d H:i:s", time());
+				$custhi_info->save();
+			}
+
+			$this->redirect("./index.php?r=user/showCust");
+		}
+
+		$this->renderPartial('updateCust',
+			array('user_info'=>$user_info,
+				'cust_info'=>$cust_info,
+				'addr_info'=>$addr_info,
+				'custhi_info'=>$custhi_info,
+				'custhr_info'=>$custhr_info));
+	}
+
+	/**
+	 * 顾客健康信息反馈添加
+	 */
+	public function actionAddCustHealthReply($id)
+	{
+		$cust_model = Customer::model();
+		$cust_info = $cust_model->findByPk($id);
+
+		$custhr_info = new Cust_Health_Reply();
+
+		if(isset($_POST['Cust_Health_Reply'])) {
+			$custhr_info->attributes = $_POST["Cust_Health_Reply"];
+			$custhr_info->custhr_cust_id = $id;
+			$custhr_info->save();
+			$this->redirect("./index.php?r=user/updateCust&id=$id");
+		}
+
+		$this->renderPartial('addCustHealthReply',
+			array('cust_info'=>$cust_info,
+				'custhr_info'=>$custhr_info));
 	}
 }

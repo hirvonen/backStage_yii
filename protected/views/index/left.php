@@ -133,6 +133,12 @@
 					<td><a class=menuchild
 					       href="./index.php?r=user/show"
 					       target="right">用户一览</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td><a class=menuchild
+					       href="./index.php?r=user/showCust"
+					       target="right">顾客一览</a></td></tr>
 <!--				<tr height=20>-->
 <!--					<td align=middle width=30><img height=9-->
 <!--					                               src="--><?php //echo BACK_IMG_URL; ?><!--menu_icon.gif" width=9></td>-->
@@ -181,6 +187,24 @@
 					<td width="110" ><a class=menuchild
 					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_168YUAN?>"
 					                    target=right>订单一览(168元)</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td width="110" ><a class=menuchild
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_LY168YUAN?>"
+					                    target=right>订单一览(联洋168元)</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td width="110" ><a class=menuchild
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_1111?>"
+					                    target=right>订单一览(双11)</a></td></tr>
+				<tr height=20>
+					<td align=middle width=30><img height=9
+					                               src="<?php echo BACK_IMG_URL; ?>menu_icon.gif" width=9></td>
+					<td width="110" ><a class=menuchild
+					                    href="./index.php?r=order/showOtherOrder&kind=<?php echo OTHER_KIND_HAOKANG?>"
+					                    target=right>订单一览(好慷)</a></td></tr>
 			</table>
 			<table cellspacing=0 cellpadding=0 width=150 border=0>
 				<tr height=22>

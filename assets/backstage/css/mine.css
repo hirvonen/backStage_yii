@@ -1,5 +1,6 @@
 body{
     font-size: 13px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
 }
 .div_search{
     font-size: 13px;
@@ -32,6 +33,38 @@ body{
     line-height: 25px;
     padding-left: 8px;
     text-align: left;
+}
+.table_show_color{
+    font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif;
+    width:100%;
+    border-collapse:collapse;
+    border: #ffffff;
+    font-size: small;
+}
+.table_show_color td,th{
+    border:1px solid #87ceeb;
+    padding:3px 7px 2px 7px;
+}
+.table_show_color th
+{
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#4169e1;
+    color:#ffffff;
+    font-weight: bold;
+    font-size: small;
+}
+.table_show_color th.alt{
+    color:#4169e1;
+    font-style: inherit;
+    font-size: large;
+    background-color: #ffffff;
+    border: #ffffff;
+}
+.table_show_color tr.alt td{
+    color:#000000;
+    background-color:#add8e6;
 }
 .div_head{
     font-size: 13px;

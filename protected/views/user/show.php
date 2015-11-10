@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-	<title>商品列表</title>
+	<title>用户列表</title>
 
 	<link href="<?php echo BACK_CSS_URL; ?>mine.css" type="text/css" rel="stylesheet" />
 </head>
@@ -54,15 +54,14 @@
             </span>
 </div>
 <div style="font-size: 13px; margin: 10px 5px;">
-	<table class="table_a" border="1" width="100%">
-		<tbody><tr bgcolor="#4169e1" style="font-weight: bold;">
-<!--			<td align="center">操作</td>-->
-			<td align="center">用户编号</td>
-			<td>用户种别</td>
-			<td>用户姓名</td>
-<!--			<td>用户注册来源</td>-->
-			<td>用户名</td>
-			<td>创建时间</td>
+<!--	<table class="table_a" border="1" width="100%">-->
+	<table class="table_show_color" border="1" width="100%">
+		<tbody><tr class="alt" style="font-weight: bold;">
+			<th>用户编号</th>
+			<th>用户种别</th>
+			<th>用户姓名</th>
+			<th>用户名</th>
+			<th>创建时间</th>
 		</tr>
 		<?php
         $i=0;
@@ -70,10 +69,7 @@
 			?>
 			<tr <?php
                 if($i%2 != 0){
-                    echo 'bgcolor="#add8e6"';
-                }
-                else{
-                    echo 'bgcolor="#ffffff"';
+                    echo 'class="alt"';
                 }
                 ?>
                 id="user1">

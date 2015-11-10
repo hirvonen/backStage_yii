@@ -125,6 +125,15 @@ class OrderController extends Controller
             case OTHER_KIND_168YUAN:
                 $this->renderPartial("showOtherOrder168", array('order_info' => $order_info));
                 break;
+            case OTHER_KIND_LY168YUAN:
+                $this->renderPartial("showOtherOrderLY168", array('order_info' => $order_info));
+                break;
+            case OTHER_KIND_1111:
+                $this->renderPartial("showOtherOrder1111", array('order_info' => $order_info));
+                break;
+            case OTHER_KIND_HAOKANG:
+                $this->renderPartial("showOtherOrderHaoKang", array('order_info' => $order_info));
+                break;
             default:
                 echo '<script>alert("出错啦！并没有这样的订单类型！")';
                 break;

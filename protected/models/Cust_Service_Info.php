@@ -1,10 +1,10 @@
 <?php
 
 /**
- * 地址模型
- * Class Address
+ * 客户疗程项目服务记录
+ * Class Cust_Service_Info
  */
-class Address extends CActiveRecord
+class Cust_Service_Info extends CActiveRecord
 {
 	/**
 	 * 创建模型对象
@@ -22,20 +22,6 @@ class Address extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{address}}';
-	}
-
-	public function attributeLabels()
-	{
-		return array(
-			'addr_addr'=>'顾客地址',
-		);
-	}
-
-	public function rules()
-	{
-		return array(
-			array('addr_addr,','safe'),
-		);
+		return '{{cust_service_info}}';
 	}
 }
