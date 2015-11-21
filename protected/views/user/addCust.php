@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-	<title>顾客详细信息修改</title>
+	<title>添加顾客</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
 	<link href="<?php echo BACK_CSS_URL; ?>mine.css" type="text/css" rel="stylesheet">
 </head>
@@ -9,7 +9,7 @@
 <body>
 <div class="div_head">
             <span>
-                <span style="float:left">当前位置是：用户管理-》修改顾客详细信息</span>
+                <span style="float:left">当前位置是：用户管理-》添加顾客</span>
 	            <span style="float:right;margin-right: 8px;font-weight: bold">
                     <a style="text-decoration: none" href="./index.php?r=user/showCust">【返回】</a>
                 </span>
@@ -22,14 +22,6 @@
 	<table border="1" width="100%" class="table_show_color">
 		<tr>
 			<th class="alt">顾客基本信息</th>
-		</tr>
-		<tr>
-			<td>
-				<?php echo $form->label($user_info, 'pk_usr_id'); ?>
-			</td>
-			<td>
-				<?php echo $form->label($user_info,$user_info->pk_usr_id); ?>
-			</td>
 		</tr>
 		<tr class="alt">
 			<td>
@@ -54,11 +46,24 @@
 			</td>
 			<td>
 				<?php
-				if($addr_info) {
-					echo $form->textArea($addr_info, 'addr_addr', array('rows'=>3, 'cols'=>70));
-				} else {
-					echo $form->textField('地址未知');
+				echo $form->textArea($addr_info, 'addr_addr', array('rows'=>3, 'cols'=>70));
+				?>
+			</td>
+		</tr>
+		<tr class="alt">
+			<td>
+				<?php echo $form->label($addr_info, 'addr_district'); ?>
+			</td>
+			<td>
+				<?php
+				$code_model = Code::model();
+				$query = 'select * from tbl_code where code_tbl_name = "tbl_address" and code_name = "addr_district"';
+				$code_info = $code_model->findAllBySql($query);
+				$district_options = array();
+				foreach($code_info as $_code_info_v){
+					$district_options[$_code_info_v->code_value] = $_code_info_v->code_meaning;
 				}
+				echo $form->dropDownList($addr_info,'addr_district',$district_options);
 				?>
 			</td>
 		</tr>
@@ -84,8 +89,9 @@
 				<?php echo $form->label($cust_info, 'cust_in_time'); ?>
 			</td>
 			<td>
-				<?php echo $form->label($cust_info, $cust_info->cust_in_time);?>
+<!--				--><?php //echo $form->label($cust_info, $cust_info->cust_in_time);?>
 <!--				--><?php //echo $form->label($cust_info, 'cust_in_time');?>
+				<?php echo $form->textField($cust_info, 'cust_in_time'); ?>
 			</td>
 		</tr>
 		<tr>
@@ -317,52 +323,18 @@
 				<?php echo $form->textArea($custhi_info, 'custhi_other_health_info', array('rows'=>3, 'cols'=>70));?>
 			</td>
 		</tr>
-		<?php
-		if($custhr_info) {
-			echo '<tr><th class="alt">健康信息反馈<a href="./index.php?r=user/addCustHealthReply&id='.
-				$user_info->pk_usr_id.
-				'">(添加)</a></th></tr>';
-			for($i=(count($custhr_info)-1);$i>=0;$i--) {
-				if($i%2!=0) {
-					echo '<tr>';
-				} else {
-					echo '<tr class="alt">';
-				}
-				echo '<td>'.$form->label($custhr_info[$i], 'custhr_reply').'</td>';
-				echo '<td>'.$form->textArea($custhr_info[$i], 'custhr_reply', array('rows'=>3, 'cols'=>70)).'</td>';
-				echo '</tr>';
-
-				if($i%2!=0) {
-					echo '<tr>';
-				} else {
-					echo '<tr class="alt">';
-				}
-				echo '<td>'.$form->label($custhr_info[$i], 'custhr_reply_beau_name').'</td>';
-				echo '<td>'.$form->textField($custhr_info[$i], 'custhr_reply_beau_name').'</td>';
-				echo '</tr>';
-
-				if($i%2!=0) {
-					echo '<tr>';
-				} else {
-					echo '<tr class="alt">';
-				}
-				echo '<td>'.$form->label($custhr_info[$i], 'custhr_reply_date').'</td>';
-				echo '<td>'.$form->textField($custhr_info[$i], 'custhr_reply_date').'</td>';
-				echo '</tr>';
-			}
-		} else {
-			echo '<tr><th class="alt"><a href="./index.php?r=user/addCustHealthReply&id='.
-				$user_info->pk_usr_id.
-				'">添加健康信息反馈</a></th></tr>';
-		}
-		?>
+<!--		--><?php
+//			echo '<tr><th class="alt"><a href="./index.php?r=user/addCustHealthReply&id='.
+//				$user_info->pk_usr_id.
+//				'">添加健康信息反馈</a></th></tr>';
+//		?>
 
 
 
 
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="修改">
+				<input type="submit" value="添加">
 			</td>
 		</tr>
 	</table>

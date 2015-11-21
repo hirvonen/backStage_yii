@@ -29,13 +29,14 @@ class Address extends CActiveRecord
 	{
 		return array(
 			'addr_addr'=>'顾客地址',
+			'addr_district'=>'区域',
 		);
 	}
 
 	public function rules()
 	{
 		return array(
-			array('addr_addr,','safe'),
+			array('addr_addr,addr_district','safe'),
 		);
 	}
 }

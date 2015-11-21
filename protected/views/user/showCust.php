@@ -12,7 +12,7 @@
             <span>
                 <span style="float: left;">当前位置是：用户管理-》顾客一览</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="#">【添加顾客】</a>
+                    <a style="text-decoration: none;" href="./index.php?r=user/addCust">【添加顾客】</a>
                 </span>
             </span>
 </div>
@@ -28,7 +28,7 @@
 	                $select_kind = $_POST["cust_source"];
                 }
                 else {
-	                $select_kind = 0;
+	                $select_kind = -1;
                 }
                 echo '来源<select name="cust_source" style="width: 100px;">';
 

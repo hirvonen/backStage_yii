@@ -52,19 +52,27 @@
 //	foreach($code_info as $_code_v) {
 //		$prefer_options[$_code_v->code_value] = $_code_v->code_meaning;
 //	}
+//	$prefer_options = array();
 	switch($contact_info->con_kind) {
 		case OTHER_KIND_1YUAN:
 			$prefer_options = array ('1'=>'透润美肤', '2'=>'经络养生', '3'=>'经络纤体/淋巴排毒');
 			break;
 		case OTHER_KIND_88YUAN:
 		case OTHER_KIND_SGB:
+		case OTHER_KIND_HAOKANG:
+		case OTHER_KIND_LY168YUAN:
 			$prefer_options = array ('4'=>'经络养生','5'=>'透润美肤');
 			break;
 		case OTHER_KIND_168YUAN:
 			$prefer_options = array ('6'=>'深层淋巴净排','7'=>'经络纤体','8'=>'轻盈塑体（局部）','9'=>'经络养生调理','10'=>'肩颈调理',
 				'11'=>'温肾固本','12'=>'肝胆养护','13'=>'补气养血','14'=>'关节理疗（膝盖）','15'=>'透润美肤',
 				'16'=>'白皙美肤','17'=>'3D紧致美肤','18'=>'乳腺疏通散结/开奶','19'=>'骨盆调整','20'=>'胸部紧致提升');
+			break;
+		case OTHER_KIND_1111:
+			$prefer_options = array ('6'=>'深层淋巴净排','8'=>'轻盈塑体（局部）','12'=>'肝胆养护','17'=>'3D紧致美肤');
+			break;
 		default:
+			$prefer_options = array('0'=>'出错了');
 			break;
 	}
 

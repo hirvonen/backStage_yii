@@ -27,12 +27,13 @@ class UserController extends Controller
 			array(
 				'allow',
 				'actions'=>array('del','detail','initPassword','logout','show','chgpwd','update',
-					'add_step1','add_step2','showCust','updateCust','addCustHealthReply'),
+					'add_step1','add_step2','showCust','updateCust','addCustHealthReply','addCust'),
 				'users'=>array('superadmin'),
 			),
 			array(
 				'allow',
-				'actions'=>array('detail','logout','show','chgpwd','update','showCust','updateCust','addCustHealthReply'),
+				'actions'=>array('detail','logout','show','chgpwd','update','showCust','updateCust','addCustHealthReply',
+					'add_step1','add_step2','initPassword','addCust'),
 				'users'=>array('admin','zhangli','shenjia','zengkan','wangjiayi','weixuejiao'),
 			),
 			array(
@@ -572,7 +573,31 @@ class UserController extends Controller
 //		$user_info = $user_model->findAll();
 
 		$cust_model = Customer::model();
-		$cust_info = $cust_model->findAll();
+
+		if(isset($_POST["cust_source"])){
+			if($_POST["cust_source"]==-1){
+				$findByFilter = 0;  //用户没有选择，只是单纯刷新页面，需要查询所有记录
+			}
+			else{
+				$findByFilter = 1;  //需要按照filter查询记录
+			}
+		}
+		else{
+			$findByFilter = 0;  //首次进入页面，需要查询所有记录
+		}
+
+		if($findByFilter != 0){
+			if ($_POST["cust_source"] != -1) {
+				$cust_source = $_POST["cust_source"];
+				$cust_info = $cust_model->findAllByAttributes(array('cust_source' => $cust_source));
+			}
+			else{
+				$cust_info = $cust_model->findAll();
+			}
+		}
+		else{
+			$cust_info = $cust_model->findAll();
+		}
 
 		$this->renderPartial("showCust",array('user_info'=>$user_model, 'cust_info'=>$cust_info));
 	}
@@ -616,19 +641,29 @@ class UserController extends Controller
 
 				//将用户喜爱的项目按位计算并保存
 				$cust_prefer = 0;
-				for($i=0; $i<count($_POST['Customer']['cust_prefer']); $i++) {
-					if($_POST['Customer']['cust_prefer'][$i]) {
-						$cust_prefer |= (int)($_POST['Customer']['cust_prefer'][$i]);
+				//如果啥都没选的话，下记字符串应该为空，否则为数组（内容为数字）
+				if($_POST['Customer']['cust_prefer'] != '') {
+					for ($i = 0; $i < count($_POST['Customer']['cust_prefer']); $i++) {
+						if ($_POST['Customer']['cust_prefer'][$i]) {
+							$cust_prefer |= (int)($_POST['Customer']['cust_prefer'][$i]);
+						}
 					}
+				} else {
+					$cust_prefer = 0;
 				}
 				$cust_info->cust_prefer = $cust_prefer;
 
 				//将用户喜爱的美疗师按位计算并保存
 				$cust_beautician = 0;
-				for($i=0; $i<count($_POST['Customer']['cust_beautician']); $i++) {
-					if($_POST['Customer']['cust_beautician'][$i]) {
-						$cust_beautician |= (int)($_POST['Customer']['cust_beautician'][$i]);
+				//如果啥都没选的话，下记字符串应该为空，否则为字符串数组（内容为数字）
+				if($_POST['Customer']['cust_beautician'] != '') {
+					for ($i = 0; $i < count($_POST['Customer']['cust_beautician']); $i++) {
+						if ($_POST['Customer']['cust_beautician'][$i]) {
+							$cust_beautician |= (int)($_POST['Customer']['cust_beautician'][$i]);
+						}
 					}
+				} else {
+					$cust_beautician = 0;
 				}
 				$cust_info->cust_beautician = $cust_beautician;
 				$cust_info->save();
@@ -677,5 +712,110 @@ class UserController extends Controller
 		$this->renderPartial('addCustHealthReply',
 			array('cust_info'=>$cust_info,
 				'custhr_info'=>$custhr_info));
+	}
+
+	/**
+	 * 添加顾客
+	 */
+	public function actionAddCust()
+	{
+		$user_model = new User();
+		$addr_model = new Address();
+		$cust_model = new Customer();
+		$custhi_model = new Cust_Health_Info();
+
+		if (isset($_POST["User"]) && isset($_POST["Customer"])) {
+			$user_model->attributes = $_POST["User"];
+
+			//设定用户种别为：顾客
+			$user_model->usr_kind = 2;
+
+			//设定用户密码为：xyz123456
+			$user_model->usr_password = md5("xyz123456");
+
+			$user_model->user_chg_pwd_old = "oldpassword";
+			$user_model->user_chg_pwd_new = "newpassword";
+			$user_model->user_chg_pwd_new_cfm = "newpassword";
+
+			//设置用户头像的默认值
+			if($user_model->usr_pic_id == ''){
+				$user_model->usr_pic_id = '100000';
+			}
+
+			if($user_model->save()){
+				$cust_model->attributes = $_POST["Customer"];
+				//customer表里面的主键是user表的外键，user表的外键又是自增的，所以要先保存完user表才能保存customer表
+				$cust_model->pk_cust_id = $user_model->pk_usr_id;
+
+				//将作为用户名的手机号填入顾客信息里
+				$cust_model->cust_mobile1 = $_POST['User']['usr_username'];
+
+				//将用户喜爱的项目按位计算并保存
+				$cust_prefer = 0;
+				//如果啥都没选的话，下记字符串应该为空，否则为数组（内容为数字）
+				if($_POST['Customer']['cust_prefer'] != '') {
+					for ($i = 0; $i < count($_POST['Customer']['cust_prefer']); $i++) {
+						if ($_POST['Customer']['cust_prefer'][$i]) {
+							$cust_prefer |= (int)($_POST['Customer']['cust_prefer'][$i]);
+						}
+					}
+				} else {
+					$cust_prefer = 0;
+				}
+				$cust_model->cust_prefer = $cust_prefer;
+
+				//将用户喜爱的美疗师按位计算并保存
+				$cust_beautician = 0;
+				//如果啥都没选的话，下记字符串应该为空，否则为字符串数组（内容为数字）
+				if($_POST['Customer']['cust_beautician'] != '') {
+					for ($i = 0; $i < count($_POST['Customer']['cust_beautician']); $i++) {
+						if ($_POST['Customer']['cust_beautician'][$i]) {
+							$cust_beautician |= (int)($_POST['Customer']['cust_beautician'][$i]);
+						}
+					}
+				} else {
+					$cust_beautician = 0;
+				}
+				$cust_model->cust_beautician = $cust_beautician;
+
+				if($cust_model->save()) {
+					$addr_model->attributes = $_POST['Address'];
+					$addr_model->addr_cust_id = $user_model->pk_usr_id;
+					if(!($addr_model->save())) {
+						$cust_model->delete();
+						$user_model->delete();
+						echo "<script>alert('地址信息添加失败！');</script>";
+					}
+
+					$custhi_model->attributes = $_POST['Cust_Health_Info'];
+					$custhi_model->pk_custhi_cust_id = $user_model->pk_usr_id;
+					$custhi_model->custhi_height = (float)($_POST['Cust_Health_Info']['custhi_height']);
+					$custhi_model->custhi_weight = (float)($_POST['Cust_Health_Info']['custhi_weight']);
+					$custhi_model->custhi_date = date("Y-m-d H:i:s", time());
+					if(!($custhi_model->save())) {
+						$addr_model->delete();
+						$cust_model->delete();
+						$user_model->delete();
+						echo "<script>alert('用户健康信息添加失败！');</script>";
+					}
+
+					$this->redirect("./index.php?r=user/showCust");
+				}
+				else{
+					$user_model->delete();
+					var_dump($cust_model->getErrors());
+					echo "<script>alert('顾客信息添加失败！');</script>";
+				}
+			}
+			else {
+//				var_dump($user_model->getErrors());
+				echo "<script>alert('用户信息添加失败！');</script>";
+			}
+		}
+
+		$this->renderPartial('addCust', array('user_info'=>$user_model,
+			'cust_info'=>$cust_model,
+			'addr_info'=>$addr_model,
+			'custhi_info'=>$custhi_model));
 	}
 }

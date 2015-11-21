@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 			<td>
-				<?php echo $form->dropDownList($user_model,'usr_kind',array('管理员','理疗师','顾客')); ?>
+				<?php echo $form->dropDownList($user_model,'usr_kind',array('管理员','理疗师')); ?>
 			</td>
 		</tr>
 		<tr>

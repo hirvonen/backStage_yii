@@ -76,6 +76,7 @@ class Customer extends CActiveRecord
 			array('cust_mobile1,cust_mobile2','match','pattern'=>'/^1\d{10}$/','message'=>'手机号码形式不正确！'),
 			array('cust_phone','match','pattern'=>'/^0\d{2,3}-?\d{7,8}$/','message'=>'座机号码形式不正确！请以区号-号码的形式填写'),
 			array('cust_birthday','match','pattern'=>'/^[1-2][\d]{3}\-(0\d|1[0-2])\-([0-2]\d|3[0-1])$/','message'=>'生日形式不正确！'),
+//			array('cust_in_time','match','pattern'=>'/^[1-2][\d]{3}\-(0\d|1[0-2])\-([0-2]\d|3[0-1])$/','message'=>'日期形式不正确！'),
 			array('cust_email1,cust_email2','match','pattern'=>'/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/','message'=>'电子邮件形式不正确！'),
 			array('cust_child_no,cust_childbearing_age','match','pattern'=>'/^[0-9]\d*$/','message'=>'此处必须填写数字！（可以为0）'),
 			array('cust_realname,cust_sex,cust_source,cust_in_time,
